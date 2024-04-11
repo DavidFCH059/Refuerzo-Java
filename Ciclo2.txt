@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class NNumeros {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingresa La Cantidad De Numeros");
+        int cantidadNumeros = scanner.nextInt();
+        
+        int sumaPrimerUltimo = 0;
+        int cantidadPares = 0;
+        int cantidadEntre10y20 = 0;
+        
+        for (int i = 0; i < cantidadNumeros; i++) {
+            System.out.println("Ingresa el numero " + (i+1) + ":");
+            int numero = scanner.nextInt();
+            
+            if (i == 0 || i == cantidadNumeros - 1) {
+                sumaPrimerUltimo += numero;
+            }
+            
+            if (numero % 2 == 0) {
+                cantidadPares++;
+            }
+            
+            if (numero >= 10 && numero <= 20) {
+                cantidadEntre10y20++;
+            }
+        }
+        
+        System.out.println("Cantidad de numeros pares: " + cantidadPares);
+        System.out.println("Cantidad de numeros entre 10 y 20: " + cantidadEntre10y20);
+        System.out.println("Suma del primer y ultimo número: " + sumaPrimerUltimo);
+    }
+} 

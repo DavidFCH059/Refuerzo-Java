@@ -1,0 +1,30 @@
+// Estudiante.java
+public class Estudiante extends Persona {
+    private int estado;
+
+    // Constructor
+    public Estudiante(String nombre, String direccion, String telefono, String email, int estado) {
+        super(nombre, direccion, telefono, email);
+        setEstado(estado);
+    }
+
+    // Getter y Setter
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        if (estado >= 1 && estado <= 4) {
+            this.estado = estado;
+        } else {
+            System.out.println("Estado inválido. Se asignará por defecto el estado 1.");
+            this.estado = 1;
+        }
+    }
+
+    // Override del método toString()
+    @Override
+    public String toString() {
+        return super.toString() + "\nEstado: " + estado;
+    }
+}

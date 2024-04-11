@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese los datos del estudiante:");
+        System.out.print("Nombre: ");
+        String nombreEstudiante = scanner.nextLine();
+        System.out.print("Dirección: ");
+        String direccionEstudiante = scanner.nextLine();
+        System.out.print("Teléfono: ");
+        String telefonoEstudiante = scanner.nextLine();
+        System.out.print("Email: ");
+        String emailEstudiante = scanner.nextLine();
+        System.out.print("Estado (1-4): ");
+        int estadoEstudiante = Integer.parseInt(scanner.nextLine());
+
+        Estudiante estudiante = new Estudiante(nombreEstudiante, direccionEstudiante, telefonoEstudiante, emailEstudiante, estadoEstudiante);
+
+        System.out.println("\nIngrese los datos del empleado:");
+        System.out.print("Nombre: ");
+        String nombreEmpleado = scanner.nextLine();
+        System.out.print("Dirección: ");
+        String direccionEmpleado = scanner.nextLine();
+        System.out.print("Teléfono: ");
+        String telefonoEmpleado = scanner.nextLine();
+        System.out.print("Email: ");
+        String emailEmpleado = scanner.nextLine();
+        System.out.print("Departamento (Contabilidad, Recursos Humanos, Compras): ");
+        String departamentoEmpleado = scanner.nextLine();
+        System.out.print("Salario: ");
+        float salarioEmpleado = Float.parseFloat(scanner.nextLine());
+        System.out.print("Fecha de Contratación: ");
+        String fechaContratacionEmpleado = scanner.nextLine();
+
+        Empleado empleado = new Empleado(nombreEmpleado, direccionEmpleado, telefonoEmpleado, emailEmpleado, departamentoEmpleado, salarioEmpleado, fechaContratacionEmpleado);
+
+        System.out.println("\nDatos del estudiante:");
+        System.out.println(estudiante);
+
+        System.out.println("\nDatos del empleado:");
+        System.out.println(empleado);
+
+        scanner.close();
+    }
+}

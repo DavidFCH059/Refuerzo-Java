@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Arreglo2 {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese la cantidad de estudiantes:");
+        int cantidadEstudiantes = scanner.nextInt();
+        
+        String[] nombres = new String[cantidadEstudiantes];
+        double[] notas = new double[cantidadEstudiantes];
+        
+        for (int i = 0; i < cantidadEstudiantes; i++) {
+            scanner.nextLine();
+            System.out.println("Ingrese el nombre del estudiante " + (i+1));
+            nombres[i] = scanner.nextLine();
+            
+            System.out.println("Ingrese la nota del estudiante " + (i+1));
+            notas[i] = scanner.nextDouble();
+        }
+        System.out.println("Los Nombres Y Notas Ingresadas Son");
+        for(int i = 0; i <cantidadEstudiantes; i++){
+        	System.out.println("Nombre: " + nombres[i] + ", Nota: " + notas[i]);
+        }
+    }
+}

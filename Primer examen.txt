@@ -1,0 +1,95 @@
+import java.util.Scanner;
+
+public class Examen {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Escriba Su Nombre");
+        System.out.println("R//:David Fernando");
+        System.out.println();
+        System.out.println("Escriba Su Apellido");
+        System.out.println("R//:Castañeda Hincapie");
+        System.out.println();
+        System.out.println("2.¿Cuándo se genera el ByteCode en Java?");
+        System.out.println("R//:Se genera durante la fase de compilación del código fuente");
+        System.out.println();
+        System.out.println("3.¿Cuáles son los operadores relacionales?");
+        System.out.println("R//:Los operadores relacionales en Java son: == Igual a, != Diferente que,"
+                + " > Mayor que, < Menor que, >= Mayor o igual que, <= Menor o igual que");
+        System.out.println();
+        System.out.println("4.¿Cuáles son los operadores lógicos?");
+        System.out.println("R//:Los operadores lógicos son: && AND lógico, || OR lógico, ! NOT lógico");
+        System.out.println();
+        System.out.println("5.Liste los tipos de datos primitivos en Java.");
+        System.out.println("R//:Los tipos de datos primitivos en Java son: byte, short, int, long, float, double,"
+                + " char, boolean");
+        System.out.println();
+        System.out.println("6.¿Java es multiplataforma o uniplataforma?");
+        System.out.println("R//:El código Java se compila en bytecode, que puede ser ejecutado en cualquier"
+                + " plataforma que tenga una implementación de la máquina virtual Java");
+        System.out.println();
+
+     
+        System.out.println("Ingrese un número entero:");
+        int N = scanner.nextInt();
+
+  
+        if (N == 0) {
+            System.out.println("No se permiten cálculos para el número 0");
+        } else {
+            int positivos = 0;
+            int negativos = 0;
+            int cero = 0;
+            int enRango = 0;
+            int sumaPositivos = 0;
+            int sumaNegativos = 0;
+
+            for (int i = 0; i < N; i++) {
+                System.out.println("Ingrese el número " + (i + 1) + ":");
+                int numero = scanner.nextInt();
+
+                if (numero > 0) {
+                    positivos++;
+                    sumaPositivos += numero;
+                } else if (numero < 0) {
+                    negativos++;
+                    sumaNegativos += numero;
+                } else {
+                    cero++;
+                }
+
+                if (numero >= 10 && numero <= 100) {
+                    enRango++;
+                }
+            }
+
+            double promedioPositivos = (double) sumaPositivos / positivos;
+            double porcentajePositivos = (double) (positivos * 100) / N;
+            double porcentajeNegativos = (double) (negativos * 100) / N;
+
+            System.out.println("Cantidad de números positivos: " + positivos);
+            System.out.println("Cantidad de números negativos: " + negativos);
+            System.out.println("Cantidad de ceros: " + cero);
+            System.out.println("Cantidad de números en el rango de 10 a 100: " + enRango);
+            System.out.println("Suma de los números positivos: " + sumaPositivos);
+            System.out.println("Suma de los números negativos: " + sumaNegativos);
+            System.out.println("Promedio de los números positivos: " + promedioPositivos);
+            System.out.println("Porcentaje de números positivos: " + porcentajePositivos + "%");
+            System.out.println("Porcentaje de números negativos: " + porcentajeNegativos + "%");
+        }
+
+        int contadorPalabras = 0;
+        String palabra;
+        System.out.println("Ingrese palabras (ingrese 'FIN' o 'fin' para terminar):");
+        while (true) {
+            palabra = scanner.next();
+            if (palabra.equalsIgnoreCase("FIN"))
+                break;
+            contadorPalabras++;
+        }
+        System.out.println("La cantidad de palabras ingresadas es: " + contadorPalabras);
+        
+        scanner.close();
+    }
+}

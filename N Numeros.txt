@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Numeros {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese la cantidad de números:");
+        int cantidadDeNumeros = scanner.nextInt();
+
+        int sumaPares = 0;
+        int cantidadPares = 0;
+        int sumaGeneral = 0;
+
+        System.out.println("Ingrese los números enteros:");
+        for (int i = 0; i < cantidadDeNumeros; i++) {
+            int numero = scanner.nextInt();
+            sumaGeneral += numero; 
+
+            if (numero % 2 == 0) {
+                System.out.println(numero + " Es par");
+                sumaPares += numero; 
+                cantidadPares++; 
+            } else {
+                System.out.println(numero + " Es impar");
+            }
+
+        }
+        System.out.println("La suma de los numeros pares es: " + sumaPares);
+        System.out.println("La cantidad de numeros pares es: " + cantidadPares);
+        System.out.println("La suma en general es: " + sumaGeneral);
+        scanner.close();
+    }
+}

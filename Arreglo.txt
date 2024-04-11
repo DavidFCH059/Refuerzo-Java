@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Arreglo {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese la cantidad de números que desea");
+        int cantidadNumeros = scanner.nextInt();
+        
+        int[] resultados = new int[cantidadNumeros];
+        
+        for (int i = 0; i < cantidadNumeros; i++) {
+            System.out.println("Ingrese el número " + (i+1) + ":");
+            int numero = scanner.nextInt();
+            resultados[i] = numero * 2;
+        }
+        
+        System.out.println("Los resultados son:");
+        for (int i = 0; i < cantidadNumeros; i++) {
+            System.out.println("El doble del número ingresado " + (i+1) + " es: " + resultados[i]);
+        }
+    }
+}
